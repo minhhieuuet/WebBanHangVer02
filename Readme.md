@@ -11,6 +11,7 @@ Ngày 5/2/2018:
 -Tao trang profile user 
 -Tạo middleware AdminLoginMiddleware
 -Trang đăng nhập đăng xuất Admin
+-Auth
 -Tạo trang sửa xóa sản phẩm,loại sản phẩm
 
 Ngày 6/2/2018: 

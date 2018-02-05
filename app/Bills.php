@@ -18,4 +18,6 @@ class Bills extends Model
     {
     	return $this->hasMany('App\BillDetails','id_bill','id');
     }
+
+    
 }

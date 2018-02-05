@@ -4,8 +4,8 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12">
-                        <h1 class="page-header">Category
-                            <small>List</small>
+                        <h1 class="page-header">Khách hàng
+                            <small>Danh sách</small>
                         </h1>
                     </div>
                     <!-- /.col-lg-12 -->
@@ -30,7 +30,7 @@
                             @foreach($khachhang as $value)
                             <tr class="odd gradeX" align="center">
                                 <td>{{$value->id}}</td>
-                                <td>{{$value->name}}</td>
+                                <td><a href="khach-hang/profile/{{$value->id}}">{{$value->name}}<a></td>
                                 <td>{{$value->gender}}</td>
                                 <td>{{$value->email}}
                                 

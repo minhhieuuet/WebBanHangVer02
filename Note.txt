@@ -1,0 +1,11 @@
+Ngày 4/2/2018
+Khoi tao AdminController
+Tao xong model
+
+Tao xong danh sach don hang,san pham,loai san pham, khach hang.
+
+Ngày 2: Tao them :
+
+-Them don hang, san pham, loai san pham,khach hang
+-Tao trang profile cua khach hang(xoa, sua khach hang)
+-Tao trang profile user 

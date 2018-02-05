@@ -4,9 +4,9 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Khóa Học Lập Trình Laravel Framework 5.x Tại Khoa Phạm">
+    <meta name="description" content="Laravel Admin Page">
     <meta name="author" content="">
-    <title>Admin - Khoa Phạm</title>
+    <title>Trang quản trị</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="{{asset('bower_components/bootstrap/dist/css/bootstrap.min.css')}}" rel="stylesheet">
@@ -32,7 +32,7 @@
     <div id="wrapper">
 
         <!-- Navigation -->
-        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+        <nav class="navbar navbar-default navbar-fixed-top" role="navigation" style="margin-bottom: 0">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="sr-only">Toggle navigation</span>
@@ -40,7 +40,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">Admin Area - Khoa Phạm</a>
+                <a class="navbar-brand" href="index.html">Trang quản trị</a>
             </div>
             <!-- /.navbar-header -->
 
@@ -51,13 +51,18 @@
                         <i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-user">
-                        <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
+                       
+                            
+                         @if(isset($user))
+                        <li><a href="#"><i class="fa fa-user fa-fw"></i> {{$user->name}}</a>
                         </li>
+                         @endif
                         <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
                         </li>
                         <li class="divider"></li>
-                        <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                        <li><a href="{{route('admin/dang-xuat')}}"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
                         </li>
+                       
                     </ul>
                     <!-- /.dropdown-user -->
                 </li>
@@ -80,16 +85,16 @@
                             <!-- /input-group -->
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                            <a href="{{route('trang-chu')}}"><i class="fa fa-dashboard fa-fw"></i> Trang chủ</a>
                         </li>
-                        <li>
-                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Loại sản phẩm<span class="fa arrow"></span></a>
+                       <li>
+                            <a href="{{route('loai-san-pham')}}"><i class="fa fa-bar-chart-o fa-fw"></i> Loại sản phẩm<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="#">Danh sách loại sản phẩm</a>
+                                    <a href="{{route('loai-san-pham')}}">Danh sách loại sản phẩm</a>
                                 </li>
                                 <li>
-                                    <a href="#">Thêm loại sản phẩm</a>
+                                    <a href="loai-san-pham/them">Thêm loại sản phẩm</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
@@ -98,22 +103,32 @@
                             <a href="#"><i class="fa fa-cube fa-fw"></i> Sản phẩm<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="#">Danh sách sản phẩm</a>
+                                    <a href="{{route('san-pham')}}">Danh sách sản phẩm</a>
                                 </li>
                                 <li>
-                                    <a href="#">Thêm sản phẩm</a>
+                                    <a href="san-pham/them">Thêm sản phẩm</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-users fa-fw"></i> Người dùng<span class="fa arrow"></span></a>
+                            <a href="admin/don-hang"><i class="fa fa-shopping-cart"></i> Đơn hàng<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="#">Danh sách người dùng</a>
+                                    <a href="{{route('don-hang')}}">Danh sách đơn hàng</a>
+                                </li>
+                                
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-users fa-fw"></i> Khách hàng<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="{{route('khach-hang')}}">Danh sách khách hàng</a>
                                 </li>
                                 <li>
-                                    <a href="#">Thêm người dùng</a>
+                                    <a href="#">Thêm khách hàng</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
@@ -124,7 +139,7 @@
             </div>
             <!-- /.navbar-static-side -->
         </nav>
-
+        <br><br><br>
         <!-- Page Content -->
         @yield('content')
 
@@ -133,7 +148,7 @@
 
     <!-- jQuery -->
     <script src="{{asset('bower_components/jquery/dist/jquery.min.js')}}"></script>
-
+    <script src="//cdn.ckeditor.com/4.8.0/standard/ckeditor.js"></script>
     <!-- Bootstrap Core JavaScript -->
     <script src="{{asset('bower_components/bootstrap/dist/js/bootstrap.min.js')}}"></script>
 

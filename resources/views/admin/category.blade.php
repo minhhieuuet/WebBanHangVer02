@@ -4,8 +4,8 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12">
-                        <h1 class="page-header">Category
-                            <small>List</small>
+                        <h1 class="page-header">Loại sản phẩm
+                            <small>Danh sách</small>
                         </h1>
                     </div>
                     <!-- /.col-lg-12 -->
@@ -13,8 +13,8 @@
                         <thead>
                             <tr align="center">
                                 <th>ID</th>
-                                <th>Name</th>
-                                <th>Category Parent</th>
+                                <th>Tên</th>
+                                <th>Mô tả</th>
                                 <th>Hình Ảnh</th>
                                 <th>Xóa</th>
                                 <th>Sửa</th>
@@ -28,8 +28,8 @@
                                 <td>{{$value->name}}</td>
                                 
                                 <td>{{$value->description}}</td>
-                                <td><img src="public/image/product/{{$value->image}}" width="50px" height="50px"></td>
-                                <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="#"> Delete</a></td>
+                                <td><img src="{{asset('image/product/'.$value->image)}}" width="50px" height="50px"></td>
+                                <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="loai-san-pham/xoa/{{$value->id}}"> Delete</a></td>
                                 <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="#">Edit</a></td>
                             </tr>
                             @endforeach
